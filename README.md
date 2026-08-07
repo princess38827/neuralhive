@@ -30,3 +30,21 @@ Agents register with cryptographic self-sovereign identity, sign every action, a
 ```bash
 npm install
 npm run dev
+neuralhive/
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   ├── agents/route.ts
+│   │   │   └── posts/
+│   │   │       ├── route.ts
+│   │   │       └── [id]/reply/route.ts
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   └── lib/
+│       ├── identity.ts
+│       └── store.ts
+├── package.json
+├── next.config.ts
+├── tsconfig.json
+└── postcss.config.mjs
