@@ -1,33 +1,43 @@
 # 🐝 NeuralHive
 
-**A social community for people, creators, builders, and AI agents.**
+**A human-first social community for people, creators, builders, and AI agents.**
 
-NeuralHive is a modern social-community web app built with Next.js and designed for a connected, human-first digital space.
+NeuralHive is a modern, responsive social-community web app built with **Next.js, React, and TypeScript**. The current release is an MVP foundation focused on a calm, community-first social experience rather than engagement traps.
 
-## ✨ What’s included
+## ✨ Current features
 
-- 🏠 Social home/feed experience
-- 👤 Profiles and avatars
-- ✍️ Create posts
-- ❤️ Likes and engagement
-- 💬 Comments and replies
-- 🔁 Social sharing interactions
-- 📖 Stories / temporary content UI
-- 🔎 Search and discovery
+- 🏠 Home feed with **For You / Following / Latest** tabs
+- 👤 Profile and avatar UI
+- ✍️ Create posts directly from the feed
+- ❤️ Like / unlike posts
+- 💬 Add replies to posts
+- 🔁 Share post links
+- 🔖 Save interaction UI
+- 📖 Stories UI
+- 🔎 Search posts and people
 - 🔥 Trending topics
-- 🤖 AI-agent/community-ready architecture
+- 👥 Follow / unfollow suggestions
+- 💾 Local browser persistence for MVP posts
 - 📱 Responsive mobile-first interface
-- 🌙 NeuralHive dark/futuristic design system
+- 🌙 NeuralHive dark/futuristic visual system
+- 🤖 Architecture ready to grow into an AI-agent/community platform
 
-## 🚀 Tech stack
+> **MVP note:** Posts are currently stored in the browser with `localStorage`. This is intentional for the prototype; production authentication, database storage, media uploads, real-time messaging, notifications, moderation, and creator monetization still need backend services.
 
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- Vercel
+## 🧰 Tech stack
 
-## 🛠️ Local development
+- **Next.js 15** — App Router
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS 4 / PostCSS**
+- **Vercel** for production hosting
+
+## 🚀 Run locally
+
+Requirements:
+
+- Node.js 20+
+- npm 10+
 
 Install dependencies:
 
@@ -41,43 +51,116 @@ Start the development server:
 npm run dev
 ```
 
-Then open `http://localhost:3000`.
+Open:
 
-Create a production build locally:
+```text
+http://localhost:3000
+```
+
+Create a production build:
 
 ```bash
 npm run build
 ```
 
-Run the production server:
+Run the production build locally:
 
 ```bash
 npm start
 ```
 
-## ☁️ Vercel deployment
+## ☁️ Deploy to Vercel
 
-NeuralHive is configured to deploy as a Next.js application on Vercel.
+NeuralHive is a standard Next.js application and should be deployed from the **repository root**.
 
-**Important:** Vercel must use the repository root as the project root. Do **not** configure `public` as the Output Directory for this Next.js app.
+Recommended Vercel project settings:
 
-Recommended Vercel settings:
+| Setting | Value |
+|---|---|
+| Framework Preset | **Next.js** |
+| Root Directory | **`.`** |
+| Build Command | **`npm run build`** |
+| Install Command | **`npm install`** |
+| Output Directory | **Leave blank / default** |
+| Production Branch | **`main`** |
 
-- Framework Preset: **Next.js**
-- Root Directory: **`.`**
-- Build Command: **`npm run build`**
-- Install Command: **`npm install`**
-- Output Directory: **leave blank / default**
+### Important
 
-The production deployment should be created from the `main` branch.
+Do **not** set `public` or another static directory as Vercel's Output Directory. Next.js manages its own build output.
 
-## 📁 Project
+The repository no longer uses a GitHub Pages deployment workflow; **Vercel is the intended production host**.
 
-GitHub: https://github.com/princess38827/neuralhive
+### If Vercel shows `404: NOT_FOUND`
 
-## 🔐 Current MVP note
+Check these items in the Vercel project:
 
-The current social experience is an MVP foundation. Authentication, persistent production database storage, real-time messaging, media storage, notifications, moderation, and creator monetization can be added as the platform evolves.
+1. The project is connected to `princess38827/neuralhive`.
+2. The production branch is `main`.
+3. Root Directory is `.`.
+4. Framework Preset is **Next.js**.
+5. Output Directory is empty/default.
+6. The latest deployment is using the latest commit from `main`.
+7. A fresh deployment is triggered after changing the project settings.
+
+A successful build should produce a Next.js deployment with the application entry point at `/`.
+
+## 📁 Project structure
+
+```text
+neuralhive/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── next.config.ts
+├── package.json
+├── postcss.config.mjs
+└── README.md
+```
+
+## 🧭 Roadmap
+
+### Phase 1 — Community MVP
+
+- [x] Feed
+- [x] Post composer
+- [x] Likes
+- [x] Replies
+- [x] Search
+- [x] Follow UI
+- [x] Responsive layout
+- [x] Vercel-ready Next.js configuration
+
+### Phase 2 — Real accounts and data
+
+- [ ] Authentication
+- [ ] User profiles
+- [ ] Persistent database
+- [ ] Follow relationships
+- [ ] Real notifications
+- [ ] Real comments and reactions
+
+### Phase 3 — Full social platform
+
+- [ ] Image/video uploads
+- [ ] Stories with expiration
+- [ ] Direct messaging
+- [ ] Real-time activity
+- [ ] Moderation and reporting
+- [ ] Creator subscriptions
+- [ ] Tips and paywalled content
+
+### Phase 4 — NeuralHive intelligence
+
+- [ ] AI-agent profiles
+- [ ] Agent-to-human interaction
+- [ ] Community AI assistants
+- [ ] Personalized discovery
+- [ ] Agent safety and permission controls
+
+## 🤝 Contributing
+
+NeuralHive is designed to evolve as a community platform. Keep changes focused, accessible, mobile-friendly, and aligned with the human-first product direction.
 
 ## 📄 License
 
