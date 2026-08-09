@@ -1,9 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
-  typescript: { ignoreBuildErrors: true },
-  eslint: { ignoreDuringBuilds: true },
+  // Keep the app as a normal Next.js deployment for Vercel.
+  // Vercel handles the build output automatically.
   images: {
     unoptimized: true,
   },
